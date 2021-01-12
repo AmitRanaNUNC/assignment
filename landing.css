@@ -12,7 +12,7 @@
 }
 
 .navbar-brand{
-    margin-left:3%;
+    margin-left:8%;
 }
 
 .contact-icons > i {
@@ -21,7 +21,7 @@
     font-size:30px;
 }
 .contact-icons {
-    margin-left:50%;
+    margin-left:40%;
     text-align:center;
     margin-right:1px;
     width:1%;
@@ -32,7 +32,6 @@ address{
 }
 
 #main-video{
-    border:1px solid #333;
     padding:0px;
     margin-right:30px;
     height:360px;
@@ -55,3 +54,37 @@ input, button{
     margin:5px;
 }
 
+.lSPager{
+    visibility: hidden;
+}
+
+.fa-play-circle{
+    font-size: 60px;
+    position: absolute;
+    right:62%;
+    top:55%;
+    color:#495057;
+    cursor:pointer;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.card-title, .card-text{
+    margin-top:10px;
+}
+
+#goToPrevSlide{
+    position: absolute;
+    bottom:-170px;
+    left:100px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#goToNextSlide{
+    position: absolute;
+    bottom:-170px;
+    right:100px;
+    font-size: 30px;
+    cursor: pointer;
+}

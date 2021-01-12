@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="landing.css">
+    <link type="text/css" rel="stylesheet" href="css/lightslider.css" />                  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/lightslider.js"></script> 
   </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,8 +58,9 @@
           </div>
         </div>
         <div class="row">
-          <div id="main-video" class="col">
-            <video src="movie.mp4" width="650" height="360" controls></video>
+          <div id="main-video" class="col-8">
+            <video src="videos/What is Cloud Computing__HD.mp4" width="100%" height="100%" controls style="object-fit: cover;" poster="img/cloudcomputing.jpg"></video>
+            <i class="fas fa-play-circle"></i>
           </div>
           <div id="form" class="col">
             <form action="">
@@ -66,10 +70,79 @@
               <input type="text" class="form-control" placeholder="Phone Number">
               <textarea name="" class="form-control" id="" cols="30" rows="3" placeholder="Comments"></textarea>
               <button class="form-control btn btn-success">Submit</button>
-              <span style="text-align: center;color:white">Read our privacy policy before submitting the form</span >
+              <p style="text-align: center;color:white;font-size:12px;">Read our privacy policy before submitting the form</p>
             </form>
           </div>
+          <div class="col-8" style="margin-left:-1%;margin-top:2%">
+            <h2>Cloud computing</h2>
+            <p>Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
+          </div>
         </div>
+        <ul id="autoWidth" class="cs-hidden">
+          <li class="item-a">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/Artificial Intelligence & the Future - Rise of AI (Elon Musk, Bill Gates, Sundar_HD.mp4" poster="img/ai.jpeg" controls></video>
+                <h5 class="card-title">Artificial Intelligence</h5>
+                <p class="card-text">Artificial intelligence (AI), is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals, which involves consciousness and emotionality.</p>
+            </div>
+          </li>
+          <li class="item-b">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/How Cloud Computing Became a Big Tech Battleground _ WSJ_HD.mp4" poster="img/cloud.jpg" controls></video>
+                <h5 class="card-title">How Cloud Computing Became a Big Tech Battleground</h5>
+                <p class="card-text">Big tech firms are investing in data centers as they compete for the $214 billion cloud computing market. </p>
+            </div>
+          </li>
+          <li class="item-c">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/Oscar's Oasis - Dowsing for Water _ HQ _ Funny Cartoons_HD.mp4" poster="img/oskar.jpg" controls></video>
+                <h5 class="card-title">Oscar's Oasis</h5>
+                <p class="card-text">Oscar's Oasis - Dowsing for Water</p>
+            </div>
+          </li>
+          <li class="item-d">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/Sci-Fi Short Film “FTL' _ DUST_HD.mp4" poster="img/sci-fi.jpg" controls></video>
+                <h5 class="card-title">Sci-Fi Short Film “FTL'</h5>
+                <p class="card-text">Sci-Fi Short Film “FTL'</p>
+            </div>
+          </li>
+          <li class="item-e">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/Sleeping in Space_HD.mp4" poster="img/space.jpg_fit=scale" controls></video>
+                <h5 class="card-title">Sleeping in Space</h5>
+                <p class="card-text">Space has no "up" or "down," but it does have microgravity. As a result, astronauts are weightless and can sleep in any orientation.</p>
+            </div>
+          </li>
+          <li class="item-f">
+            <div style="width: 25rem;">
+              <video class="card-img-top" src="videos/The Elon Musk Story - 3D Animated_HD.mp4" poster="img/elon-musk.jpg" controls></video>
+                <h5 class="card-title">The Elon Musk Story</h5>
+                <p class="card-text">The Elon Musk Story - 3D Animated</p>
+            </div>
+          </li>
+        </ul>
+        <i id="goToPrevSlide" class="fas fa-chevron-circle-left"></i>
+        <i id="goToNextSlide" class="fas fa-chevron-circle-right"></i>
       </div>
+      <script>
+         $(document).ready(function() {
+          var slider = $('#autoWidth').lightSlider({
+              item: 3,
+              controls: false,
+              autoWidth:true,
+              loop:true,
+              onSliderLoad: function() {
+                  $('#autoWidth').removeClass('cS-hidden');
+              }
+          });
+          $('#goToPrevSlide').on('click', function () {
+              slider.goToPrevSlide();
+          });
+          $('#goToNextSlide').on('click', function () {
+              slider.goToNextSlide();
+          });
+        });
+      </script>
 </body>
 </html>
