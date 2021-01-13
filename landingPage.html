@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="landing.css">
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />                  
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/lightslider.js"></script> 
+    <script src="js/lightslider.js"></script>
   </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,9 +58,26 @@
           </div>
         </div>
         <div class="row">
-          <div id="main-video" class="col-8">
-            <video src="videos/What is Cloud Computing__HD.mp4" width="100%" height="100%" controls style="object-fit: cover;" poster="img/cloudcomputing.jpg"></video>
-            <i class="fas fa-play-circle"></i>
+          <div id="main-video" class="col-8" onmouseover="vidControls()" onmouseout="hideControls()">
+            <video id="vid" src="videos/What is Cloud Computing__HD.mp4" width="100%" height="100%" style="object-fit: cover;" poster="img/cloudcomputing.jpg" onclick="pauseVid()"></video>
+            <i id="playicon" class="fas fa-play-circle" onclick="playVid()"></i>
+            <div id="controls">
+              <i class="fas fa-backward"></i>
+              <i class="fas fa-play"></i>
+              <i class="fas fa-forward"></i>
+              <i class="fas fa-redo"></i>
+              <i class="fas fa-expand" onclick="openFullscreen()"></i>
+              <i class="fas fa-compress"></i>
+              <i id="volume" class="fas fa-volume-up" onclick="volume()"></i>
+              <i id="mute" class="fas fa-volume-mute" onclick="mute()"></i>
+              <select name="" id="play-speed" onchange="getPlaySpeed()">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected="selected">Normal</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+              </select>
+            </div>
           </div>
           <div id="form" class="col">
             <form action="">
@@ -125,24 +142,6 @@
         <i id="goToPrevSlide" class="fas fa-chevron-circle-left"></i>
         <i id="goToNextSlide" class="fas fa-chevron-circle-right"></i>
       </div>
-      <script>
-         $(document).ready(function() {
-          var slider = $('#autoWidth').lightSlider({
-              item: 3,
-              controls: false,
-              autoWidth:true,
-              loop:true,
-              onSliderLoad: function() {
-                  $('#autoWidth').removeClass('cS-hidden');
-              }
-          });
-          $('#goToPrevSlide').on('click', function () {
-              slider.goToPrevSlide();
-          });
-          $('#goToNextSlide').on('click', function () {
-              slider.goToNextSlide();
-          });
-        });
-      </script>
+    <script src="landing.js"></script>
 </body>
 </html>
