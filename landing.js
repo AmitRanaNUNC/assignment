@@ -24,12 +24,29 @@ $(document).ready(function() {
     var vid = document.getElementById("vid");
     
     function playVid(){
-        console.log(Math.floor(vid.currentTime));
-        console.log(Math.floor(vid.duration));
         vid.play();
         document.getElementById("playicon").style.display = "none";
         document.getElementById("play").style.display = "none";
         document.getElementById("pause").style.display = "inline";
+
+        // var i = 0;
+        // if (i == 0) {
+        //     i = 1;
+        //     var elem = document.getElementById("playProgress");
+        //     var totalDuration = Math.ceil(vid.duration)/100 * 100;
+        //     var width = Math.ceil(vid.currentTime)/100 * 100;
+        //     var id = setInterval(frame,20);
+            
+        //     function frame() {
+        //         if (totalDuration <= width) {
+        //             clearInterval(id);
+        //             i = 0;
+        //         } else {
+        //             width++;
+        //             elem.style.width = width + "%";
+        //         }
+        //     }
+        // }
     }
 
     function pauseVid(){
@@ -39,13 +56,6 @@ $(document).ready(function() {
         document.getElementById("pause").style.display = "none";
     }
 
-    function vidControls(){
-        document.getElementById("controls").style.visibility = "visible";
-    }
-
-    function hideControls(){
-        document.getElementById("controls").style.visibility = "hidden";
-    }
 
     function volume(){
         document.getElementById("mute").style.display = "inline";
@@ -90,22 +100,27 @@ $(document).ready(function() {
             document.getElementById("form").style.backgroundColor = "tan";
             document.getElementById("navspace").style.backgroundColor = "tan";
             document.getElementById("playicon").style.color = "tan";
+            document.getElementById("footer").style.backgroundColor = "tan";
         }else if(themeValue == "theme-item-2"){
             document.getElementById("form").style.backgroundColor = "cadetblue";
             document.getElementById("navspace").style.backgroundColor = "cadetblue";
             document.getElementById("playicon").style.color = "cadetblue";
+            document.getElementById("footer").style.backgroundColor = "cadetblue";
         }else if(themeValue == "theme-item-3"){
             document.getElementById("form").style.backgroundColor = "#333";
             document.getElementById("navspace").style.backgroundColor = "#333";
             document.getElementById("playicon").style.color = "#333";
+            document.getElementById("footer").style.backgroundColor = "#333";
         }else if(themeValue == "theme-item-4"){
             document.getElementById("form").style.backgroundColor = "teal";
             document.getElementById("navspace").style.backgroundColor = "teal";
             document.getElementById("playicon").style.color = "teal";
+            document.getElementById("footer").style.backgroundColor = "teal";
         }else if(themeValue == "theme-item-5"){
             document.getElementById("form").style.backgroundColor = "#6c398a";
             document.getElementById("navspace").style.backgroundColor = "#6c398a";
             document.getElementById("playicon").style.color = "#6c398a";
+            document.getElementById("footer").style.backgroundColor = "#6c398a";
         }
     }
 
@@ -134,4 +149,25 @@ $(document).ready(function() {
             document.getElementById(videoHeading).innerText = mainHeading;
             document.getElementById(videoDetail).innerText = mainDetail;
         }
+    }
+
+    function forwardVid(val){
+        vid.currentTime +=val;
+    }
+
+    function backwardVid(val){
+        vid.currentTime -=val;
+    }
+
+    function restartVid(){
+        vid.currentTime = 0;
+    }
+    var clickCount = 0;
+
+    function showThemes(){
+        clickCount++;
+        if(clickCount % 2 != 0)
+            document.getElementById("theme").style.right = "0px";
+        else
+            document.getElementById("theme").style.right = "-50px";
     }

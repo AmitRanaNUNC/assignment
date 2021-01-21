@@ -18,7 +18,7 @@
 <body>
     <nav id="navspace" class="navbar navbar-expand-sm navbar-light">
           <a class="navbar-brand" href="#" style="color:white">Ford ECO SPORT 2020</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,7 +38,6 @@
             </ul>
           </div>
       </nav>
-
       <div class="special">
         <div class="row">
           <div id="john-card" class="col-sm">
@@ -52,30 +51,32 @@
             </address>
           </div>
           <div id="theme">
-            <span class="circle" id="theme-item-1" style="background-color:tan" onclick="themeChange(event)"></span>
+            <i class="fas fa-arrow-left" onclick="showThemes()"></i>
+            <span class="circle" id="theme-item-1" style="background-color:tan;" onclick="themeChange(event)"></span>
             <span class="circle" id="theme-item-2" style="background-color:cadetblue;" onclick="themeChange(event)"></span>
             <span class="circle" id="theme-item-3" style="background-color:#333" onclick="themeChange(event)"></span>
             <span class="circle" id="theme-item-4" style="background-color:teal" onclick="themeChange(event)"></span>
             <span class="circle" id="theme-item-5" style="background-color:#6c398a" onclick="themeChange(event)"></span>
           </div>
           <div id="contact-icons" class="col-sm">
-            <i class="fab fa-facebook" style="color:#4267B2"></i>
-            <i class="fab fa-twitter" style="color:#4267B2"></i>
-            <i class="fab fa-instagram" style="color:#8a3ab9"></i>
-            <i class="fab fa-youtube" style="color:red"></i>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook" style="color:#4267B2;"></i></a>
+            <a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter" style="color:#4267B2"></i></a>
+            <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fab fa-instagram" style="color:#8a3ab9"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube" style="color:red"></i></a>
             <p style=font-size:10px>CONNECT WITH US</p>
           </div>
         </div>
         <div class="row">
-          <div id="main-video" class="col-sm-8" onmouseover="vidControls()" onmouseout="hideControls()">
+          <div id="main-video" class="col-sm-8"">
             <video id="vid" src="videos/What is Cloud Computing__HD.mp4" poster="img/cloudcomputing.jpg" onclick="pauseVid()" style="width:100%;height:100%;object-fit: cover;"></video>
             <i id="playicon" class="fas fa-play-circle" onclick="playVid()"></i>
             <div id="controls">
-              <i class="fas fa-backward"></i>
+              <!-- <div id="playProgress"></div> -->
+              <i class="fas fa-backward" onclick="backwardVid(5)"></i>
               <i id="play" class="fas fa-play" onclick="playVid()"></i>
               <i id="pause" class="fas fa-pause" onclick="pauseVid()"></i>
-              <i class="fas fa-forward"></i>
-              <i id="replay" class="fas fa-redo"></i>
+              <i class="fas fa-forward" onclick="forwardVid(5)"></i>
+              <i id="replay" class="fas fa-redo" onclick="restartVid()"></i>
               <i class="fas fa-expand" onclick="openFullscreen()"></i>
               <!-- <i class="fas fa-compress"></i> -->
               <i id="volume" class="fas fa-volume-up" onclick="volume()"></i>
@@ -91,16 +92,16 @@
           </div>
           <div id="form" class="col-sm">
             <form action="">
-              <input type="text" class="form-control" placeholder="First Name">
-              <input type="text" class="form-control" placeholder="Last Name">
-              <input type="text" class="form-control" placeholder="Email Address">
-              <input type="text" class="form-control" placeholder="Phone Number">
-              <textarea name="" class="form-control" id="" cols="30" rows="3" placeholder="Comments"></textarea>
+              <input type="text" class="form-control" placeholder="First Name" required>
+              <input type="text" class="form-control" placeholder="Last Name" required>
+              <input type="email" class="form-control" placeholder="Email Address" required>
+              <input type="number" class="form-control" placeholder="Phone Number" required>
+              <textarea name="" class="form-control" id="" cols="30" rows="3" placeholder="Comments" required></textarea>
               <button class="form-control btn btn-success">Submit</button>
               <p style="text-align: center;color:white;font-size:12px;">Read our privacy policy before submitting the form</p>
             </form>
           </div>
-          <div class="col-sm-8">
+          <div id="main-video-info" class="col-sm-8">
             <h5 id="vid-heading" style="margin:15px 0px;font-family: 'Montserrat', sans-serif;">Cloud computing</h3>
             <p id="vid-detail" style="margin:15px 0px;font-family: 'Roboto', sans-serif;">Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
           </div>
@@ -152,6 +153,9 @@
         <i id="goToPrevSlide" class="fas fa-chevron-circle-left"></i>
         <i id="goToNextSlide" class="fas fa-chevron-circle-right"></i>
       </div>
+      <footer id="footer">
+        Copyright 2020. All rights reserved. Terms of Use Privacy policy
+      </footer>
     <script src="landing.js"></script>
 </body>
 </html>
