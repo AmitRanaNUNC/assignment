@@ -29,7 +29,20 @@ $(document).ready(function() {
         document.getElementById("duration").innerText = durationMin + ":" + durationSec;
     }
 
+    function getTime(time) {
+        let minutes = Math.floor(Math.round(time) / 60);
+        let seconds = Math.round(time % 60).toString();
+        seconds = seconds.length === 1 ? "0" + seconds : seconds === 60 ? "00" : seconds;
+        return minutes + ":" + seconds + " /";
+    }
+    
+    var clickPlayCount = 0;
+    
     function playVid(){
+        clickPlayCount++;
+
+        if(clickPlayCount == 1)
+            vid.pause();
         vid.play();
         document.getElementById("playicon").style.display = "none";
         document.getElementById("play").style.display = "none";
@@ -42,18 +55,27 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    function getTime(time) {
-        let minutes = Math.floor(Math.round(time) / 60);
-        let seconds = Math.round(time % 60).toString();
-        seconds = seconds.length === 1 ? "0" + seconds : seconds === 60 ? "00" : seconds;
-        return minutes + ":" + seconds + " /";
-    }
-
     function pauseVid(){
-        vid.pause();
-        document.getElementById("playicon").style.display = "block";
-        document.getElementById("play").style.display = "inline";
-        document.getElementById("pause").style.display = "none";
+        clickPlayCount++;
+        
+        if(clickPlayCount % 2 != 0){
+            vid.play();
+            document.getElementById("playicon").style.display = "none";
+            document.getElementById("play").style.display = "none";
+            document.getElementById("pause").style.display = "inline";
+
+            setInterval(function(){
+                var videoTime = getTime(vid.currentTime)
+                document.getElementById("timer").innerText = videoTime;
+                document.getElementById("playProgress").style.width = ((vid.currentTime / vid.duration) *100) + "%";
+            }, 1000);
+        }
+        else{
+            vid.pause();
+            document.getElementById("playicon").style.display = "block";
+            document.getElementById("play").style.display = "inline";
+            document.getElementById("pause").style.display = "none";
+        }
     }
 
 
