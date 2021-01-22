@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin:0px;
     padding:0px ;
-    /* overflow: hidden; */
 }
 
 body{
@@ -63,16 +62,22 @@ address{
     cursor: pointer;
 }
 
-#autoWidth{
-    position: relative;
-}
-
 #main-video{
     position: relative;
-    padding:0px;
     margin-right:30px;
     height:360px;
     cursor: pointer;
+}
+
+#controls{
+    border-top:7px solid grey;
+    transform:translateY(-110%);
+    width:100%;
+    opacity: 0;
+    transition:opacity 0.5s;
+    padding:0.3vw;
+    margin:0px;
+    background-color: rgba(100, 100, 100, 0.4);
 }
 
 #form{
@@ -109,104 +114,68 @@ input, button{
 
 .card-title{
     font-family: 'Montserrat', sans-serif;
-    /* font-weight:600; */
+    color:tomato
 }
 
 .card-text{
     width:80%;
-    margin:10px 30px;
+    margin:10px 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
+    color:crimson;
 }
 
 #goToPrevSlide{
     position: absolute;
-    bottom:-22%;
-    left:1%;
+    bottom:70%;
+    left:-1%;
+    transform: translate(1%,70%);
     font-size: 30px;
     cursor: pointer;
 }
 
 #goToNextSlide{
     position: absolute;
-    bottom:-22%;
-    right:1%;
+    bottom:70%;
+    right:-1%;
+    transform: translate(1%,70%);
     font-size: 30px;
     cursor: pointer;
 }
 
 .fa-backward{
     color:white;
-    position: absolute;
-    top:10px;
-    left:10px;
+    padding-left:1vw;
+    padding-right:1vw;
 }
 
 .fa-forward{
     color:white;
-    position: absolute;
-    top:10px;
-    left:80px;
+    padding-left:1vw;
 }
 
 .fa-play, .fa-pause{
     color:white;
-    position: absolute;
-    top:10px;
-    left:45px;
 }
 .fa-redo{
     color:white;
-    position: absolute;
-    left:140px;
-    top:10px;
+    padding-left:1vw;
 }
 
 .fa-volume-up, .fa-volume-mute{
     color:white;
-    position: absolute;
-    left:180px;
-    top:10px;
+    padding-left:1vw;
+    padding-right:35vw;
 }
 
 .fa-expand{
     color:white;
-    position: absolute;
-    left:96%;
-    top:10px;
-}
-
-.fa-compress{
-    color:white;
-    position: absolute;
-    left:770px;
-    top:10px;
+    padding-left:1vw;
+    width:10px;
 }
 
 #play-speed{
-    position: absolute;
-    left:85%;
-    width:80px;
-    font-size: 12px;
-    padding-left:8px;
-    top:8px;
-}
-
-#controls{
-    position: absolute;
-    bottom:30px;
-    border-top:1px solid grey;
-    padding-right:70px;
-    width:100%;
-    opacity: 0;
-    transition:opacity 0.5s;
-}
-
-#playProgress{
-    background-color: red;
-    width:1%;
-    height:1px;
-    border-top:5px solid red;
+    width:80px; 
 }
 
 #main-video:hover #controls{
@@ -272,6 +241,15 @@ footer{
     font-size: 12px;
 }
 
+#playProgress{
+    position:absolute;
+    border-top:7px solid blueviolet;
+    width:0%;
+    transition:all 1s;
+    bottom:100%;
+    left:-0.01px;
+}
+
 @media (max-width:600px){
     
     .navbar-brand{
@@ -301,28 +279,20 @@ footer{
         padding:20px;
     }
 
-    #play-speed{
-        position: absolute;
-        left:65%;
-        width:80px;
-        font-size: 12px;
-        padding-left:8px;
-        top:8px;
-    }
-
-    .fa-expand{
+    .fa-volume-up, .fa-volume-mute{
         color:white;
-        position: absolute;
-        left:92%;
-        top:10px;
+        padding-left:1vw;
+        padding-right:8vw;
     }
 
     #controls{
-        position: absolute;
-        bottom:30px;
-        height:15%;
         border-top:5px solid grey;
-        width:89%;
+        transform:translateY(-110%);
+        width:100%;
+        opacity: 0;
+        transition:opacity 0.5s;
+        padding:1.2vw;
+        margin:0px;
     }
 
     #playicon{
@@ -349,46 +319,22 @@ footer{
         padding:10px;
     }
 
-    #goToPrevSlide{
-        position: absolute;
-        bottom:165%;
-        left:1%;
-        font-size: 30px;
-        cursor: pointer;
-    }
-    
-    #goToNextSlide{
-        position: absolute;
-        bottom:-65%;
-        right:1%;
-        font-size: 30px;
-        cursor: pointer;
-    }
-
     .card-img-top{
         width:100%;
         height:100%;
         object-fit:cover;
     }
 
-    #goToPrevSlide{
-        position: absolute;
-        bottom:-80%;
-        left:3%;
-        font-size: 30px;
-        cursor: pointer;
+    #main-video-info{
+        transform: translateY(-220%);
     }
-    
-    #goToNextSlide{
-        position: absolute;
-        bottom:-80%;
-        right:0;
-        font-size: 30px;
-        cursor: pointer;
+
+    #form{
+        transform: translateY(45%);
     }
 }
 
-@media (max-width:1024px) and (min-width:760px){
+@media (max-width:1060px) and (min-width:760px){
     .special{
         margin:5%;
     }
@@ -424,25 +370,8 @@ footer{
         height:100%;
     }
 
-    #controls{
-        border-top:5px solid grey;
-        width:99.9%;
-    }
-
-    #play-speed{
-        position: absolute;
-        left:70%;
-        width:80px;
-        font-size: 12px;
-        padding-left:8px;
-        top:8px;
-    }
-
-    .fa-expand{
-        color:white;
-        position: absolute;
-        left:95%;
-        top:10px;
+    .fa-volume-up, .fa-volume-mute{
+        padding-right:8vw;
     }
 
     .card-img-top{
@@ -455,40 +384,6 @@ footer{
     .related-video{
         width: 22rem;
         margin:0px;
-    }
-
-    #goToPrevSlide{
-        position: absolute;
-        bottom:18%;
-        left:3%;
-        font-size: 30px;
-        cursor: pointer;
-    }
-    
-    #goToNextSlide{
-        position: absolute;
-        bottom:18%;
-        right:4%;
-        font-size: 30px;
-        cursor: pointer;
-    }
-}
-
-@media (width:1024px){
-    #goToPrevSlide{
-        position: absolute;
-        bottom:42%;
-        left:3%;
-        font-size: 30px;
-        cursor: pointer;
-    }
-    
-    #goToNextSlide{
-        position: absolute;
-        bottom:42%;
-        right:4%;
-        font-size: 30px;
-        cursor: pointer;
     }
 }
 

@@ -22,31 +22,31 @@ $(document).ready(function() {
     document.getElementById("mute").style.display = "none";
 
     var vid = document.getElementById("vid");
-    
+
+    vid.onloadedmetadata = function(){
+        var durationMin = (Math.floor((vid.duration)/60));
+        var durationSec = Math.round((vid.duration) % 60);
+        document.getElementById("duration").innerText = durationMin + ":" + durationSec;
+    }
+
     function playVid(){
         vid.play();
         document.getElementById("playicon").style.display = "none";
         document.getElementById("play").style.display = "none";
         document.getElementById("pause").style.display = "inline";
 
-        // var i = 0;
-        // if (i == 0) {
-        //     i = 1;
-        //     var elem = document.getElementById("playProgress");
-        //     var totalDuration = Math.ceil(vid.duration)/100 * 100;
-        //     var width = Math.ceil(vid.currentTime)/100 * 100;
-        //     var id = setInterval(frame,20);
-            
-        //     function frame() {
-        //         if (totalDuration <= width) {
-        //             clearInterval(id);
-        //             i = 0;
-        //         } else {
-        //             width++;
-        //             elem.style.width = width + "%";
-        //         }
-        //     }
-        // }
+        setInterval(function(){
+            var videoTime = getTime(vid.currentTime)
+            document.getElementById("timer").innerText = videoTime;
+            document.getElementById("playProgress").style.width = ((vid.currentTime / vid.duration) *100) + "%";
+        }, 1000);
+    }
+
+    function getTime(time) {
+        let minutes = Math.floor(Math.round(time) / 60);
+        let seconds = Math.round(time % 60).toString();
+        seconds = seconds.length === 1 ? "0" + seconds : seconds === 60 ? "00" : seconds;
+        return minutes + ":" + seconds + " /";
     }
 
     function pauseVid(){
@@ -171,3 +171,6 @@ $(document).ready(function() {
         else
             document.getElementById("theme").style.right = "-50px";
     }
+
+
+   

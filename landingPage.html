@@ -63,7 +63,7 @@
             <a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter" style="color:#4267B2"></i></a>
             <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fab fa-instagram" style="color:#8a3ab9"></i></a>
             <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube" style="color:red"></i></a>
-            <p style=font-size:10px>CONNECT WITH US</p>
+            <p style="font-size:15px;font-family: 'Sacramento', cursive;">Connect With Us</p>
           </div>
         </div>
         <div class="row">
@@ -71,15 +71,16 @@
             <video id="vid" src="videos/What is Cloud Computing__HD.mp4" poster="img/cloudcomputing.jpg" onclick="pauseVid()" style="width:100%;height:100%;object-fit: cover;"></video>
             <i id="playicon" class="fas fa-play-circle" onclick="playVid()"></i>
             <div id="controls">
-              <!-- <div id="playProgress"></div> -->
+            <div id="playProgress"></div>
               <i class="fas fa-backward" onclick="backwardVid(5)"></i>
               <i id="play" class="fas fa-play" onclick="playVid()"></i>
               <i id="pause" class="fas fa-pause" onclick="pauseVid()"></i>
               <i class="fas fa-forward" onclick="forwardVid(5)"></i>
+              <span id="timer" style="width:1%;margin:0px;padding-left:1vw;color:white;font-size:12px">0:00 /</span>
+              <span id="duration" style="width:1%;margin:0px;color:white;font-size:12px"></span>
               <i id="replay" class="fas fa-redo" onclick="restartVid()"></i>
-              <i class="fas fa-expand" onclick="openFullscreen()"></i>
-              <!-- <i class="fas fa-compress"></i> -->
               <i id="volume" class="fas fa-volume-up" onclick="volume()"></i>
+              <!-- <i class="fas fa-compress"></i> -->
               <i id="mute" class="fas fa-volume-mute" onclick="mute()"></i>
               <select name="" id="play-speed" onchange="getPlaySpeed()">
                 <option value="0.5">0.5x</option>
@@ -88,6 +89,7 @@
                 <option value="1.25">1.25x</option>
                 <option value="1.5">1.5x</option>
               </select>
+              <i class="fas fa-expand" onclick="openFullscreen()"></i>
             </div>
           </div>
           <div id="form" class="col-sm">
@@ -101,57 +103,59 @@
               <p style="text-align: center;color:white;font-size:12px;">Read our privacy policy before submitting the form</p>
             </form>
           </div>
-          <div id="main-video-info" class="col-sm-8">
-            <h5 id="vid-heading" style="margin:15px 0px;font-family: 'Montserrat', sans-serif;">Cloud computing</h3>
-            <p id="vid-detail" style="margin:15px 0px;font-family: 'Roboto', sans-serif;">Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
+          <div id="main-video-info" class="col-sm-6">
+            <h5 id="vid-heading" style="padding:15px;font-family: 'Montserrat', sans-serif;color:tomato">Cloud computing</h3>
+            <p id="vid-detail" style="padding:15px;font-size:13px;font-family: 'Roboto', sans-serif;color:crimson">Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
           </div>
         </div>
-        <ul id="autoWidth" class="cs-hidden">
-          <li class="item-a">
-            <div class="related-video">
-              <video id="ai" class="card-img-top" src="videos/Artificial Intelligence & the Future - Rise of AI (Elon Musk, Bill Gates, Sundar_HD.mp4" poster="img/ai.jpeg" onclick="changeVideo(this.id,'ai-heading','ai-detail')"></video>
-                <h5 id="ai-heading" class="card-title">Artificial Intelligence</h5>
-                <p id="ai-detail" class="card-text">Artificial intelligence (AI), is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals, which involves consciousness and emotionality.</p>
-            </div>
-          </li>
-          <li class="item-b">
-            <div class="related-video">
-              <video id="cloud" class="card-img-top" src="videos/How Cloud Computing Became a Big Tech Battleground _ WSJ_HD.mp4" poster="img/cloud.jpg" onclick="changeVideo(this.id,'cloud-heading','cloud-detail')"></video>
-                <h5 id="cloud-heading" class="card-title">How Cloud Computing Became a Big Tech Battleground</h5>
-                <p id="cloud-detail" class="card-text">Big tech firms are investing in data centers as they compete for the $214 billion cloud computing market. </p>
-            </div>
-          </li>
-          <li class="item-c">
-            <div class="related-video">
-              <video id="oscar" class="card-img-top" src="videos/Oscar's Oasis - Dowsing for Water _ HQ _ Funny Cartoons_HD.mp4" poster="img/oskar.jpg" onclick="changeVideo(this.id,'oscar-heading','oscar-detail')"></video>
-                <h5 id="oscar-heading" class="card-title">Oscar's Oasis</h5>
-                <p id="oscar-detail" class="card-text">Oscar's Oasis - Dowsing for Water</p>
-            </div>
-          </li>
-          <li class="item-d">
-            <div class="related-video">
-              <video id="dust" class="card-img-top" src="videos/Sci-Fi Short Film “FTL' _ DUST_HD.mp4" poster="img/sci-fi.jpg" onclick="changeVideo(this.id,'dust-heading','dust-detail')"></video>
-                <h5 id="dust-heading" class="card-title">Sci-Fi Short Film “FTL'</h5>
-                <p id="dust-detail" class="card-text">Sci-Fi Short Film “FTL'</p>
-            </div>
-          </li>
-          <li class="item-e">
-            <div class="related-video">
-              <video id="space" class="card-img-top" src="videos/Sleeping in Space_HD.mp4" poster="img/space-sleeping-feature.jpg" onclick="changeVideo(this.id,'space-heading','space-detail')"></video>
-                <h5 id="space-heading" class="card-title">Sleeping in Space</h5>
-                <p id="space-detail" class="card-text">Space has no "up" or "down," but it does have microgravity. As a result, astronauts are weightless and can sleep in any orientation.</p>
-            </div>
-          </li>
-          <li class="item-f">
-            <div class="related-video">
-              <video id="elon" class="card-img-top" src="videos/The Elon Musk Story - 3D Animated_HD.mp4" poster="img/elon-musk.jpg" onclick="changeVideo(this.id,'elon-heading','elon-detail')"></video>
-                <h5 id="elon-heading" class="card-title">The Elon Musk Story</h5>
-                <p id="elon-detail" class="card-text">The Elon Musk Story - 3D Animated</p>
-            </div>
-          </li>
-        </ul>
-        <i id="goToPrevSlide" class="fas fa-chevron-circle-left"></i>
-        <i id="goToNextSlide" class="fas fa-chevron-circle-right"></i>
+        <div id="video-wrapper" style="position:relative">
+          <ul id="autoWidth" class="cs-hidden">
+            <li class="item-a">
+              <div class="related-video">
+                <video id="ai" class="card-img-top" src="videos/Artificial Intelligence & the Future - Rise of AI (Elon Musk, Bill Gates, Sundar_HD.mp4" poster="img/ai.jpeg" onclick="changeVideo(this.id,'ai-heading','ai-detail')"></video>
+                  <h5 id="ai-heading" class="card-title">Artificial Intelligence</h5>
+                  <p id="ai-detail" class="card-text">Artificial intelligence (AI), is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals, which involves consciousness and emotionality.</p>
+              </div>
+            </li>
+            <li class="item-b">
+              <div class="related-video">
+                <video id="cloud" class="card-img-top" src="videos/How Cloud Computing Became a Big Tech Battleground _ WSJ_HD.mp4" poster="img/cloud.jpg" onclick="changeVideo(this.id,'cloud-heading','cloud-detail')"></video>
+                  <h5 id="cloud-heading" class="card-title">How Cloud Computing Became a Big Tech Battleground</h5>
+                  <p id="cloud-detail" class="card-text">Big tech firms are investing in data centers as they compete for the $214 billion cloud computing market. </p>
+              </div>
+            </li>
+            <li class="item-c">
+              <div class="related-video">
+                <video id="oscar" class="card-img-top" src="videos/Oscar's Oasis - Dowsing for Water _ HQ _ Funny Cartoons_HD.mp4" poster="img/oskar.jpg" onclick="changeVideo(this.id,'oscar-heading','oscar-detail')"></video>
+                  <h5 id="oscar-heading" class="card-title">Oscar's Oasis</h5>
+                  <p id="oscar-detail" class="card-text">Oscar's Oasis - Dowsing for Water</p>
+              </div>
+            </li>
+            <li class="item-d">
+              <div class="related-video">
+                <video id="dust" class="card-img-top" src="videos/Sci-Fi Short Film “FTL' _ DUST_HD.mp4" poster="img/sci-fi.jpg" onclick="changeVideo(this.id,'dust-heading','dust-detail')"></video>
+                  <h5 id="dust-heading" class="card-title">Sci-Fi Short Film “FTL'</h5>
+                  <p id="dust-detail" class="card-text">Sci-Fi Short Film “FTL'</p>
+              </div>
+            </li>
+            <li class="item-e">
+              <div class="related-video">
+                <video id="space" class="card-img-top" src="videos/Sleeping in Space_HD.mp4" poster="img/space-sleeping-feature.jpg" onclick="changeVideo(this.id,'space-heading','space-detail')"></video>
+                  <h5 id="space-heading" class="card-title">Sleeping in Space</h5>
+                  <p id="space-detail" class="card-text">Space has no "up" or "down," but it does have microgravity. As a result, astronauts are weightless and can sleep in any orientation.</p>
+              </div>
+            </li>
+            <li class="item-f">
+              <div class="related-video">
+                <video id="elon" class="card-img-top" src="videos/The Elon Musk Story - 3D Animated_HD.mp4" poster="img/elon-musk.jpg" onclick="changeVideo(this.id,'elon-heading','elon-detail')"></video>
+                  <h5 id="elon-heading" class="card-title">The Elon Musk Story</h5>
+                  <p id="elon-detail" class="card-text">The Elon Musk Story - 3D Animated</p>
+              </div>
+            </li>
+          </ul>
+          <i id="goToPrevSlide" class="fas fa-chevron-circle-left"></i>
+          <i id="goToNextSlide" class="fas fa-chevron-circle-right"></i>
+        </div> 
       </div>
       <footer id="footer">
         Copyright 2020. All rights reserved. Terms of Use Privacy policy
