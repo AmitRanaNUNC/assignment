@@ -38,7 +38,7 @@
             </ul>
           </div>
       </nav>
-      <div class="special">
+      <div class="container" style="margin-top:1.5rem">
         <div class="row">
           <div id="john-card" class="col-sm">
             <i class="fas fa-user-circle"></i>
@@ -92,20 +92,25 @@
               <i class="fas fa-expand" onclick="openFullscreen()"></i>
             </div>
           </div>
-          <div id="form" class="col-sm">
-            <form action="">
-              <input type="text" class="form-control" placeholder="First Name" required>
-              <input type="text" class="form-control" placeholder="Last Name" required>
-              <input type="email" class="form-control" placeholder="Email Address" required>
-              <input type="number" class="form-control" placeholder="Phone Number" required>
-              <textarea name="" class="form-control" id="" cols="30" rows="3" placeholder="Comments" required></textarea>
+          <div id="form" class="col-md">
+            <form action="" onsubmit="return formValidation()">
+              <input id="first_name" type="text" class="form-control" placeholder="First Name" onkeyup="checkFields()">
+              <div style="color:white;margin-left:8px;" id="firstname_err"></div>
+              <input id="last_name" type="text" class="form-control" placeholder="Last Name" onkeyup="checkFields()">
+              <div style="color:white;margin-left:8px;" id="lastname_err"></div>
+              <input id="email" type="email" class="form-control" placeholder="Email Address">
+              <div style="color:white;margin-left:8px;" id="email_err"></div>
+              <input id="phone_no" type="number" class="form-control" placeholder="Phone Number" onkeyup="checkFields()">
+              <div style="color:white;margin-left:8px;" id="phone_err"></div>
+              <textarea id="comment" name="" class="form-control" id="" cols="30" rows="3" onkeyup="checkFields()" placeholder="Comments"></textarea>
+              <div style="color:white;margin-left:8px;" id="comment_err"></div>
               <button class="form-control btn btn-success">Submit</button>
-              <p style="text-align: center;color:white;font-size:12px;">Read our privacy policy before submitting the form</p>
+              <p style="text-align: center;color:white;font-size:12px;margin-top:10px;">Read our privacy policy before submitting the form</p>
             </form>
           </div>
           <div id="main-video-info" class="col-sm-6">
-            <h5 id="vid-heading" style="padding:15px;font-family: 'Montserrat', sans-serif;color:tomato">Cloud computing</h3>
-            <p id="vid-detail" style="padding:15px;font-size:13px;font-family: 'Roboto', sans-serif;color:crimson">Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
+            <h5 id="vid-heading" style="font-family: 'Montserrat', sans-serif;">Cloud computing</h3>
+            <p id="vid-detail" style="font-size:13px;font-family: 'Roboto', sans-serif;">Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.</p>
           </div>
         </div>
         <div id="video-wrapper" style="position:relative">

@@ -8,6 +8,10 @@ body{
     background-color:lightgray;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 .navbar-nav{
     margin-left:auto;
   }
@@ -15,6 +19,7 @@ body{
 .navbar{
     background: #333;
     padding:0px;
+    z-index: 1;
 }  
 
 .nav-link{
@@ -48,6 +53,7 @@ body{
     text-align:center;
     margin-right:1px;
     width:1%;
+    padding-top:10px;
 }
 
 address{
@@ -64,8 +70,8 @@ address{
 
 #main-video{
     position: relative;
-    margin-right:30px;
-    height:360px;
+    margin-right:10px;
+    height:450px;
     cursor: pointer;
 }
 
@@ -86,15 +92,18 @@ address{
     padding-top: 15px;
     padding-right:20px;
     background: #333;
-    height:360px;
+    height:50%;
 }
 
 textarea{
     margin-left:5px;
+    margin-top:15px;
 }
 
 input, button{
-    margin:5px;
+    /* margin:5px; */
+    margin-left:5px;
+    margin-top:10px;
 }
 
 .lSPager{
@@ -104,7 +113,7 @@ input, button{
 #playicon{
     font-size: 60px;
     position: absolute;
-    right:50%;
+    right:45%;
     top:40%;
     color:#495057;
     cursor:pointer;
@@ -114,7 +123,7 @@ input, button{
 
 .card-title{
     font-family: 'Montserrat', sans-serif;
-    color:tomato
+    /* color:tomato */
 }
 
 .card-text{
@@ -122,7 +131,7 @@ input, button{
     margin:10px 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
-    color:crimson;
+    /* color:crimson; */
 }
 
 #goToPrevSlide{
@@ -165,7 +174,7 @@ input, button{
 .fa-volume-up, .fa-volume-mute{
     color:white;
     padding-left:1vw;
-    padding-right:35vw;
+    padding-right:27vw;
 }
 
 .fa-expand{
@@ -187,6 +196,10 @@ input, button{
     width:100%;
     height:100%;
     object-fit: cover;
+}
+
+.related-video{
+    width: 23.5rem;
 }
 
 .fa-user-circle{
@@ -222,7 +235,7 @@ input, button{
     position:absolute;
     left:-35px;
     top:50px;
-    color:tomato;
+    /* color:tomato; */
     border:2px solid white;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -248,6 +261,10 @@ footer{
     transition:all 1s;
     bottom:100%;
     left:-0.01px;
+}
+
+#vid-heading, #vid-detail{
+    padding-top:15px;
 }
 
 @media (max-width:600px){
@@ -282,7 +299,7 @@ footer{
     .fa-volume-up, .fa-volume-mute{
         color:white;
         padding-left:1vw;
-        padding-right:8vw;
+        padding-right:7vw;
     }
 
     #controls{
@@ -311,7 +328,8 @@ footer{
         border:1px solid #333 ;
         margin:auto;
         background: #333;
-        height:100%;
+        height:10%;
+        transform: translateY(120%);
     }
 
     .related-video{
@@ -326,12 +344,104 @@ footer{
     }
 
     #main-video-info{
-        transform: translateY(-220%);
+        transform: translateY(-260%);
+    }
+
+    #video-wrapper{
+        transform: translate(-1.5%,-125%);
+    }
+
+    #vid-heading, #vid-detail{
+        padding:15px;
+    }
+}
+
+@media (min-width:600px) and (max-width:760px){
+    
+    #main-video{
+        position: relative;
+        cursor: pointer;
+        width:100%;
+        height:100%;
+        padding:0px;
+    }
+
+    #contact-icons > a {
+        padding:3px;
+        font-size:25px;
+    }
+    
+    #main-video-info{
+        padding:0px;
+    }
+
+    #contact-icons{
+        margin-top:2.5rem;
+    }
+
+    #john-card{
+        color:green;
+        text-align:center;
+        width: 100%;
+    }
+
+    .related-video{
+        width: 16rem;
+        height: 100%;
+    }
+
+    #goToPrevSlide{
+        position: absolute;
+        bottom:82%;
+        left:-3%;
+        transform: translate(3%,82%);
+        font-size: 30px;
+        cursor: pointer;
+    }
+    
+    #goToNextSlide{
+        position: absolute;
+        bottom:82%;
+        right:-3%;
+        transform: translate(-3%,82%);
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .fa-user-circle{
+        margin-top:20px;
+    }
+
+    .fa-volume-up, .fa-volume-mute{
+        color:white;
+        padding-left:1vw;
+        padding-right:35vw;
+    }
+
+    #playicon{
+        font-size: 60px;
+        position: absolute;
+        right:44%;
+        top:32%;
+        color:#495057;
+        cursor:pointer;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    #main-video-info{
+        transform: translateY(-280%);
+    }
+
+    #video-wrapper{
+        transform: translate(-1.5%,-125%);
     }
 
     #form{
-        transform: translateY(45%);
+        transform: translateY(115%);
     }
+
+
 }
 
 @media (max-width:1060px) and (min-width:760px){
@@ -362,7 +472,7 @@ footer{
 
     #main-video{
         position: relative;
-        width:60%;
+        width:65%;
         cursor: pointer;
     }
 
@@ -371,7 +481,7 @@ footer{
     }
 
     .fa-volume-up, .fa-volume-mute{
-        padding-right:8vw;
+        padding-right:11vw;
     }
 
     .card-img-top{

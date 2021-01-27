@@ -194,5 +194,58 @@ $(document).ready(function() {
             document.getElementById("theme").style.right = "-50px";
     }
 
+    function formValidation(){
+        
+        if(document.getElementById("first_name").value == ""){
+            document.getElementById("firstname_err").innerHTML = "First Name is Empty or Invalid";
+            return false;
+        }else if(document.getElementById("last_name").value == ""){
+            document.getElementById("lastname_err").innerHTML = "Last Name is Empty or Invalid";
+            return false;
+        }else if(document.getElementById("email").value == ""){
+            document.getElementById("email_err").innerHTML = "Email is Empty or Invalid";
+            return false;
+        }else if(document.getElementById("phone_no").value == ""){
+            document.getElementById("phone_err").innerHTML = "Phone Number is Empty or Invalid";
+            return false;
+        }else if(document.getElementById("comment").value == ""){
+            document.getElementById("comment_err").innerHTML = "Comment is Empty or Invalid";
+            return false;
+        }
+    }
+
+    function checkFields(){
+
+        if(document.getElementById("first_name").value.length >= 3)
+            document.getElementById("firstname_err").style.display = "none";
+        else{
+            document.getElementById("firstname_err").style.display = "block";
+        }
+
+        if(document.getElementById("last_name").value.length >= 3)
+            document.getElementById("lastname_err").style.display = "none";
+        else{
+            document.getElementById("lastname_err").style.display = "block";
+        }
+
+        if(document.getElementById("email").value.length >= 4)
+            document.getElementById("email_err").style.display = "none";
+        else{
+            document.getElementById("email_err").style.display = "block";
+        }
+
+        if(document.getElementById("phone_no").value.length >= 10)
+            document.getElementById("phone_err").style.display = "none";
+        else{
+            document.getElementById("phone_err").style.display = "block";
+        }
+
+        if(document.getElementById("comment").value.length >= 10)
+            document.getElementById("comment_err").style.display = "none";
+        else{
+            document.getElementById("comment_err").style.display = "block";
+        }
+    }
+
 
    
